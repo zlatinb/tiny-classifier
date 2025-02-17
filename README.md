@@ -4,8 +4,6 @@ This project aims to create a small neural network capable of categorizing input
 
 ### Installation
 
-Make sure you have OpenBLAS installed if you want to make use of your CPU's vector instructions (AVX/AVX2):
-
 
 Clone the repo and launch the `forward.py` file.  Currently it takes positional arguments:
 ```
