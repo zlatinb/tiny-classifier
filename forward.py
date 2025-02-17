@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import numpy as np
 import time
 import sys
@@ -51,4 +52,4 @@ def benchmark() :
     return (end - start) / 1000000.0
 
 
-print(benchmark())
+print(f"{benchmark()} ms")
