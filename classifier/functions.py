@@ -24,3 +24,9 @@ class Functions :
     def tanh(self,x) :
         np.tanh(x, out=x, dtype=self.props.dtype)
         return x
+
+    def default_activation(self) :
+        if self.props.activation == "sigmoid" :
+            return self.sigmoid
+        else :
+            return self.tanh
