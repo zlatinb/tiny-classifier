@@ -34,14 +34,7 @@ Here are the results from my laptop:
 Total time for 20 run(s) was 22.169502 ms
 ```
 
-* arg 1 (100) : how many forward passes to make
-* arg 2 (f32) : whether to use single ("f32") or double ("f64") precision
-* arg 3 (64) : number of layers in the neural net
-* arg 4 (512) : number of perceptrons per layer
-* arg 5 (0.00001) : epsilon to be used to ensure numerical stability
-* arg 6 ("sigmoid") : which activation function to use.  "tanh" is also available
-
-Output is how long the combined forward passes took.  You can use this to benchmark how your CPU handles parameters.  If you install OpenBLAS you may be able to take advantage of multi-threaded vector instructions (AVX/AVX2/etc.):
+You can use this to benchmark how your CPU handles different parameters.  If you install OpenBLAS you may be able to take advantage of multi-threaded vector instructions like AVX/AVX2/etc:
 
 ```
 pip uninstall numpy
