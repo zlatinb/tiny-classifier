@@ -1,13 +1,13 @@
-version : 1
+version : 1                         # backward compatibility will be on a best-effort basis
 benchmark :
-    name : "My first benchmark"
-    nepochs : 100
+    name : "My first benchmark"     # optional
+    nepochs : 100                   # in the benchmark 1 epoch == 1 inference
     shape :
-        layers : 100
-        dimension : 128
+        layers : 100                # only hidden layers, input and output layer excluded
+        dimension : 128             # measured in perceptrons
     math :
-        precision : "f32"
-        epsilon : 0.0001
-        activation : "sigmoid"
+        precision : "f32"           # possible values are f32 and f64 on x86, other acrchitectures?
+        epsilon : 0.00001           # used for numerical stability, increase if you start getting overflows
+        activation : "sigmoid"      # available "sigmoid" and "tanh"
     performance :
-        threads : 5
+        threads : 5                 # if not present means unlimited
