@@ -1,0 +1,13 @@
+version : 1
+benchmark :
+    name : "My first benchmark"
+    nepochs : 100
+    shape :
+        layers : 100
+        dimension : 128
+    math :
+        precision : "f32"
+        epsilon : 0.0001
+        activation : "sigmoid"
+    performance :
+        threads : 5
