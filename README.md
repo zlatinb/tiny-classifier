@@ -32,9 +32,9 @@ options:
                         Maximum number of threads to use. Optional, defaults to max available.
 ```
 Here are the results from my laptop:
-```bash
-./benchmark.py -p f32 -n 20 -l 100 -d 50 -a sigmoid -e 0.0001
-Total time for 20 run(s) was 22.169502 ms
+```
+python3 benchmark.py -p f32 -n 50 -l 100 -d 512 -a sigmoid -e 1e-25
+Total time for 50 run(s) was 1189.927319 ms
 ```
 
 ### Benchmarking

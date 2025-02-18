@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+from numpy import float64
 import argparse as ap
 import yaml
 from bench import Driver
@@ -23,13 +24,14 @@ if __name__  == "__main__" :
         if parsed['version'] > YAML_VERSION :
             raise ValueError(f"Maximum config version supported is {YAML_VERSION}")
 
-        def least(where, name, threshold, required = True) :
+        def least(where, name, threshold, dt = int, required = True) :
             val = where.get(name, None)
             if not required and not val :
                 return None
-            if where[name] < threshold :
+            rv = dt(val)
+            if rv < threshold :
                 raise ValueError(f"{name} must be at least {value}")
-            return where[name]
+            return rv
         def is_in(where, name, domain, required = True) :
             if not required and name in where :
                 return None
@@ -43,12 +45,12 @@ if __name__  == "__main__" :
         args.nepochs = least(benchmark, "nepochs", 1)
         args.layers = least(benchmark['shape'], "layers", 1)
         args.dimension = least(benchmark['shape'], "dimension", 1)
-        args.epsilon = least(benchmark['math'], "epsilon", 0)
+        args.epsilon = least(benchmark['math'], "epsilon", 0, dt = float64)
         args.precision = is_in(benchmark['math'], "precision", PRECISIONS)
         args.activation = is_in(benchmark['math'], "activation", ACTIVATIONS)
         args.threads = None
         if "performance" in benchmark and benchmark['performance'] :
-            args.threads = least(benchmark['performance'], "threads", 1, False)
+            args.threads = least(benchmark['performance'], "threads", 1, required = False)
 
         driver = Driver(args)
         total = driver.run_bench()

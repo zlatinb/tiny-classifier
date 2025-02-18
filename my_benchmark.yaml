@@ -11,7 +11,7 @@ benchmark :
         dimension : 128             # measured in perceptrons
     math :
         precision : "f32"           # possible values are f32 and f64 on x86, other acrchitectures?
-        epsilon : 0.00001           # used for numerical stability, increase if you start getting overflows
+        epsilon : "1e-25"             # used for numerical stability, increase if you start getting overflows
         activation : "sigmoid"      # available "sigmoid" and "tanh"
     performance :
         threads : 5                 # if not present means unlimited
