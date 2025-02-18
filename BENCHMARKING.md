@@ -18,5 +18,5 @@ If you intend to use this tool for serious tasks or have a very large dataset, i
 
 
 
-[bench_yaml.py](https://github.com/zlatinb/tiny-classifier/blob/main/bench_yaml.py)
-[my_benchmark.yaml](https://github.com/zlatinb/tiny-classifier/blob/main/my_benchmark.yaml)
+[bench_yaml.py]:https://github.com/zlatinb/tiny-classifier/blob/main/bench_yaml.py
+[my_benchmark.yaml]:https://github.com/zlatinb/tiny-classifier/blob/main/my_benchmark.yaml
