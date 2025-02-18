@@ -4,14 +4,18 @@
 
 version : 1                         # backward compatibility will be on a best-effort basis
 benchmark :
-    name : "My first benchmark"     # optional
+    name : "Hello World!"           # optional
     nepochs : 100                   # in the benchmark 1 epoch == 1 inference
     shape :
         layers : 100                # only hidden layers, input and output layer excluded
         dimension : 128             # measured in perceptrons
     math :
         precision : "f32"           # possible values are f32 and f64 on x86, other acrchitectures?
-        epsilon : "1e-25"             # used for numerical stability, increase if you start getting overflows
+        epsilon : "4e-6"            # used for numerical stability, increase if you start getting overflows
         activation : "sigmoid"      # available "sigmoid" and "tanh"
     performance :
         threads : 5                 # if not present means unlimited
+
+
+# TODO: important - add different epsilons for different primitives.
+# The example epsilon is the smallest I could find that doesn't hit infinity in np.exp
