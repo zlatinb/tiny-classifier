@@ -1,10 +1,10 @@
 # Benchmarking
 
-### Why bother beyond a quick benchmark?
+### Why bother beyond a quick benchmark
 
 If you intend to use this tool for serious tasks or have a very large dataset, it is a good idea to do more elaborate benchmarking.  The `bench_yaml.py` tool supports yaml-driven configuration for benchmarking.  The file `my_benchmark.yaml` contains an example `yaml` configuration.  In the future I will document the different elements.
 
-Here are a few other things to take into account:
+### Few other things to take into account
 
 * You can rebuild OpenBLAS to tailor it to your architure.  You will need to reinstall numpy with the `--no-binary` flag after that and set several environment variables.
 * Check `numpy.__config__.show()` to see which instructions are available to openblas.  More == better :)
