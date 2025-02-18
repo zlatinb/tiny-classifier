@@ -2,7 +2,7 @@
 
 ### Why bother beyond a quick benchmark
 
-If you intend to use this tool for serious tasks or have a very large dataset, it is a good idea to do more elaborate benchmarking.  The `bench_yaml.py` tool supports yaml-driven configuration for benchmarking.  The file `my_benchmark.yaml` contains an example `yaml` configuration.  In the future I will document the different elements.
+If you intend to use this tool for serious tasks or have a very large dataset, it is a good idea to do more elaborate benchmarking.  The [bench_yaml.py] tool supports yaml-driven configuration for benchmarking.  The file [my_benchmark.yaml] contains an example `yaml` configuration.  In the future I will document the different elements.
 
 ### Few other things to take into account
 
@@ -14,3 +14,9 @@ If you intend to use this tool for serious tasks or have a very large dataset, i
     ```
     size = T * N ^ (N + 2)
     where N is the layer dimension (-d, --dimension) and T is the data type (4 for f32, 8 for f64)
+
+
+
+
+[bench_yaml.py](https://github.com/zlatinb/tiny-classifier/blob/main/bench_yaml.py)
+[my_benchmark.yaml](https://github.com/zlatinb/tiny-classifier/blob/main/my_benchmark.yaml)

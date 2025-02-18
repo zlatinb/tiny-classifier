@@ -38,5 +38,7 @@ Total time for 20 run(s) was 22.169502 ms
 ```
 
 ### Benchmarking
-The above tool works for quick tests; for more in-depth discussion take a look at `BENCHMARKING.md`
+The above tool works for quick tests; for more in-depth discussion take a look at [BENCHMARKING.md]
+
+[BENCHMARKING.md](https://github.com/zlatinb/tiny-classifier/blob/main/BENCHMARKING.md)
 
