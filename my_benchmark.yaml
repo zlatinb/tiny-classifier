@@ -1,3 +1,7 @@
+########################################################
+### ALL ELEMENTS REQUIRED UNLESS INDICATED OTHERWISE ###
+########################################################
+
 version : 1                         # backward compatibility will be on a best-effort basis
 benchmark :
     name : "My first benchmark"     # optional

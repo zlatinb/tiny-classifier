@@ -23,11 +23,16 @@ if __name__  == "__main__" :
         if parsed['version'] > YAML_VERSION :
             raise ValueError(f"Maximum config version supported is {YAML_VERSION}")
 
-        def least(where, name, value) :
-            if where[name] < value :
+        def least(where, name, threshold, required = True) :
+            val = where.get(name, None)
+            if not required and not val :
+                return None
+            if where[name] < threshold :
                 raise ValueError(f"{name} must be at least {value}")
             return where[name]
-        def is_in(where, name, domain) :
+        def is_in(where, name, domain, required = True) :
+            if not required and name in where :
+                return None
             if where[name] not in set(domain) :
                 raise ValueError(f"Allowed values for {name} are {domain}")
             return where[name]
@@ -41,7 +46,9 @@ if __name__  == "__main__" :
         args.epsilon = least(benchmark['math'], "epsilon", 0)
         args.precision = is_in(benchmark['math'], "precision", PRECISIONS)
         args.activation = is_in(benchmark['math'], "activation", ACTIVATIONS)
-        args.threads = least(benchmark['performance'], "threads", 1)
+        args.threads = None
+        if "performance" in benchmark and benchmark['performance'] :
+            args.threads = least(benchmark['performance'], "threads", 1, False)
 
         driver = Driver(args)
         total = driver.run_bench()
