@@ -6,10 +6,10 @@ class Stabilizer :
     def __init__(self, props) :
         self.__dtype = props.dtype
         finfo = np.finfo(props.dtype)
-        self.__clip_exp_min = finfo.min + props.epsilon
-        self.__clip_exp_max = np.log(finfo.max, dtype=props.dtype) - props.epsilon
-        self.__clip_square_min = props.epsilon - np.sqrt(finfo.max - props.epsilon)
-        self.__clip_square_max = np.sqrt(finfo.max) - props.epsilon
+        self.__clip_exp_min = finfo.min + props.epsilon_exp
+        self.__clip_exp_max = np.log(finfo.max, dtype=props.dtype) - props.epsilon_exp
+        self.__clip_square_min = props.epsilon_square - np.sqrt(finfo.max - props.epsilon_square)
+        self.__clip_square_max = np.sqrt(finfo.max) - props.epsilon_square
 
     def clip_exp(self, x) :
         np.clip(x, a_min = self.__clip_exp_min, \

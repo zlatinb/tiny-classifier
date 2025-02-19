@@ -8,7 +8,8 @@ class GlobalProperties :
         else :
             dtype = np.float64
         self.dtype = dtype
-        self.epsilon = dtype(args.epsilon)
+        self.epsilon_exp = dtype(args.epsilon_exp)
+        self.epsilon_square = dtype(args.epsilon_square)
         self.f_1 = dtype(1.0)
         self.activation = args.activation
         self.size = args.dimension

@@ -1,6 +1,8 @@
 # Tiny Classifier - a configurable neural net classifier
 
-This project aims to create a small neural network capable of categorizing input.  It is written in pure Python and runs on CPU.  Currently only the forward pass is implemented.  This tool may eventually be used to label large datasets after training on smaller labeled ones.
+This project aims to create a small neural network capable of categorizing input.  It uses in pure Python and runs on CPUs.  
+
+I started it as a learning project to help me in my studies of ML math, but I realized the final output could be useful for specialized inference on a budget.  To this end, I am very mindful of performance - if you look at the code you will see heavy emphasis on benchmarking.
 
 ### Installation
 
@@ -24,8 +26,6 @@ options:
                         How many hidden layers to have in the neural net
   --dimension DIMENSION, -d DIMENSION
                         How many perceptrons per hidden layer
-  --epsilon EPSILON, -e EPSILON
-                        Value of epsilon to use for numerical stability
   --activation {sigmoid,tanh}, -a {sigmoid,tanh}
                         Type of activation function to use. Available are sigmoid and tanh
   --threads THREADS, -t THREADS
@@ -33,12 +33,12 @@ options:
 ```
 Here are the results from my laptop:
 ```
-./benchmark.py -p f32 -n 50 -l 100 -d 1024 -a sigmoid -e 4e-6
-Total time for 50 run(s) was 1684.966727 ms
+./benchmark.py -p f32 -n 50 -l 100 -d 1024 -a sigmoid
+Total time for 50 run(s) was 3327.771058 ms
 ```
 
 ### Benchmarking
-The above tool works for quick tests; there is a YAML-driven tool as well.  For more in-depth discussion take a look at [BENCHMARKING.md]
+The above tool works for quick tests; there is also a YAML-driven tool that supports fine-grained and elaborate benchmarking.  In-depth discussion is in [BENCHMARKING.md]
 
 [BENCHMARKING.md]: https://github.com/zlatinb/tiny-classifier/blob/main/BENCHMARKING.md
 

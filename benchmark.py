@@ -14,14 +14,14 @@ if __name__  == "__main__" :
         required = True)
     parser.add_argument('--dimension', '-d', type=int, help="How many perceptrons per hidden layer",
         required = True)
-    parser.add_argument('--epsilon', '-e', type=float, help="Value of epsilon to use for numerical stability",
-        required = True)
     parser.add_argument('--activation', "-a", type=str, choices=["sigmoid","tanh"], help="Type of activation function to use.  Available are sigmoid and tanh", required = True)
     parser.add_argument("--threads", "-t", type=int, 
         help="Maximum number of threads to use.  Optional, defaults to max available.")
     args = parser.parse_args()
     args.name = None
 
+    args.epsilon_exp = 4e-6
+    args.epsilon_square = 4e-6
     driver = Driver(args)
     total = driver.run_bench()
 

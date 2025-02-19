@@ -44,8 +44,10 @@ if __name__  == "__main__" :
         args.name = benchmark.get("name", None)
         args.nepochs = least(benchmark, "nepochs", 1)
         args.layers = least(benchmark['shape'], "layers", 1)
+        epsilons = benchmark['math']['epsilons']
+        args.epsilon_exp = least(epsilons, "exp", 0, dt=float64)
+        args.epsilon_square = least(epsilons, "square", 0, dt=float64)
         args.dimension = least(benchmark['shape'], "dimension", 1)
-        args.epsilon = least(benchmark['math'], "epsilon", 0, dt = float64)
         args.precision = is_in(benchmark['math'], "precision", PRECISIONS)
         args.activation = is_in(benchmark['math'], "activation", ACTIVATIONS)
         args.threads = None
