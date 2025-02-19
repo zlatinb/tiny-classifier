@@ -45,6 +45,6 @@ I will be exposing more hyperparameters and updating this section frequently.
 
 Regarding activation functions, on my cheap laptop (ZEN2) the `tanh` activation function is much slower than `sigmoid`.  Once I implement backpropagation I intend to see which one gives better results.
 
-Choosing the right epsilons is more involved process as it involves doing iterative search at each power until you're satisfied with the backward error.  I need to investigate if promoting the epsilons to always be FP64 will end up promoting the more expensive operations like `exp` and `sqrt`.
+Choosing the right epsilons is more involved process as it involves doing iterative search at each power until you're satisfied with the forward error.  
 
 [bench_yaml.py]:https://github.com/zlatinb/tiny-classifier/blob/main/bench_yaml.py
