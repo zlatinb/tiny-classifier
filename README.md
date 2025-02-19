@@ -5,7 +5,7 @@ This project aims to create a small neural network capable of categorizing input
 ### Installation
 
 
-Install the `threadpoolctl` package and launch the `benchmark.py` file:
+Install the `threadpoolctl` package and launch the `benchmark.py` file to run a quick benchmark:
 ```bash
 pip install threadpoolctl
 ./benchmark.py --help
@@ -33,12 +33,12 @@ options:
 ```
 Here are the results from my laptop:
 ```
-python3 benchmark.py -p f32 -n 50 -l 100 -d 512 -a sigmoid -e 1e-25
-Total time for 50 run(s) was 1189.927319 ms
+./benchmark.py -p f32 -n 50 -l 100 -d 1024 -a sigmoid -e 4e-6
+Total time for 50 run(s) was 1684.966727 ms
 ```
 
 ### Benchmarking
-The above tool works for quick tests; for more in-depth discussion take a look at [BENCHMARKING.md]
+The above tool works for quick tests; there is a YAML-driven tool as well.  For more in-depth discussion take a look at [BENCHMARKING.md]
 
 [BENCHMARKING.md]: https://github.com/zlatinb/tiny-classifier/blob/main/BENCHMARKING.md
 

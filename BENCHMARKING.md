@@ -2,8 +2,30 @@
 
 ### Why bother beyond a quick benchmark
 
-If you intend to use this tool for serious tasks or have a very large dataset, it is a good idea to do more elaborate benchmarking.  The [bench_yaml.py] tool supports yaml-driven configuration for benchmarking.  The file [my_benchmark.yaml] contains an example `yaml` configuration.  In the future I will document the different elements.
+If you intend to use this tool for serious tasks or have a very large dataset, it is a good idea to do more elaborate benchmarking.  The [bench_yaml.py] tool supports yaml-driven configuration for benchmarking.
 
+Example yaml config:
+```yaml
+version : 1                         # backward compatibility will be on a best-effort basis
+benchmark :
+    name : "Hello World!"           # optional
+    nepochs : 100                   # in the benchmark 1 epoch == 1 inference
+    shape :
+        layers : 100                # only hidden layers, input and output layer excluded
+        dimension : 128             # number of perceptrons per hidden layer
+    math :
+        precision : "f32"           # possible values are f32 and f64 on x86_64, (other acrchitectures?)
+        epsilon : "4e-6"            # used for numerical stability, increase if you start getting overflows
+        activation : "sigmoid"      # available "sigmoid" and "tanh"
+    performance :
+        threads : 5                 # if not present means equal to CPU cores
+```
+
+Example usage:
+```bash
+./bench_yaml.py -c example_benchmark.yaml
+Completed "Hello World!" in 179.538458 ms
+```
 ### Few other things to take into account
 
 * You can rebuild OpenBLAS to tailor it to your architure.  You will need to reinstall numpy with the `--no-binary` flag after that and set several environment variables.
@@ -19,4 +41,3 @@ If you intend to use this tool for serious tasks or have a very large dataset, i
 
 
 [bench_yaml.py]:https://github.com/zlatinb/tiny-classifier/blob/main/bench_yaml.py
-[my_benchmark.yaml]:https://github.com/zlatinb/tiny-classifier/blob/main/my_benchmark.yaml
