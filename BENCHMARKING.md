@@ -2,7 +2,7 @@
 
 ### Why bother beyond a quick benchmark
 
-If you intend to use this tool for serious tasks or have a very large dataset, it is a good idea to do more elaborate benchmarking.  The [bench_yaml.py] tool supports yaml-driven configuration.
+If you intend to use this tool for serious tasks or have a very large dataset, it is a good idea to do more elaborate benchmarking.  The [benchmark.py] tool supports yaml-driven configuration.
 
 Example yaml config:
 ```yaml
@@ -25,7 +25,7 @@ benchmark :
 
 Example usage:
 ```bash
-./bench_yaml.py -c example_benchmark.yaml
+./benchmark.py -c example_benchmark.yaml
 Completed "Hello World!" in 179.538458 ms
 ```
 ### Various things to take into account
@@ -47,4 +47,4 @@ Regarding activation functions, on my cheap laptop (ZEN2) the `tanh` activation 
 
 Choosing the right epsilons is more involved process as it involves doing iterative search at each power until you're satisfied with the forward error.  
 
-[bench_yaml.py]:https://github.com/zlatinb/tiny-classifier/blob/main/bench_yaml.py
+[benchmark.py]: https://github.com/zlatinb/tiny-classifier/blob/main/benchmark.py
