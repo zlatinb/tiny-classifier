@@ -31,7 +31,7 @@ Completed "Hello World!" in 179.538458 ms
 ### Various things to take into account
 
 * You can rebuild OpenBLAS to tailor it to your architure.  You will need to reinstall numpy with the `--no-binary` flag after that and set several environment variables.
-* Check `numpy.__config__.show()` to see which instructions are available to openblas.  More == better :)
+* Check `numpy.__config__.show()` to see which instructions are available to OpenBLAS.  More == better :)
 * The result of the first epoch will often be worse, you may want to disregard it.
 * For fewer layers with smaller dimensions using a single thread (`-t 1`) is sometimes faster.
 * Be mindful of your CPU's cache hierarchy.  The more layers you can fit into faster cache levels the better.  A single layer should ideally take no more than 50%-70% of the target cache level.  Since all hidden layers are currently the same size, you can use this formula to compute the size of a layer:

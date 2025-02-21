@@ -2,7 +2,7 @@
 
 This project aims to create a small neural network capable of categorizing input.  It uses pure Python and runs on CPUs.  
 
-I started it as a learning project to help me in my studies of ML math, but I realized the final output could be useful for specialized inference on a budget - it's orders of magnitude cheaper to rent in the cloud without a GPU!  To this end, I am very mindful of performance - if you look at the code you will see heavy emphasis on benchmarking.
+I started it as a learning project to help me in my studies of ML math, but I realized the final output could be useful for specialized inference on a budget - cloud CPUs are orders of magnitude cheaper than cloud GPUs!  To this end, I am very mindful of throughput - if you look at the code you will see heavy emphasis on benchmarking.
 
 I will be implementing more classifiers and algorithms as I fully understand them.  I'm sure there are already optimized libraries out there but as this is a learning project I will first implement them myself and after I'm confident I understand the underlying mathematics and logic I will replace them with libraries.
 
@@ -23,7 +23,7 @@ options:
   --nepochs NEPOCHS, -n NEPOCHS
                         How many epochs to run
   --precision PRECISION, -p PRECISION
-                        What precision to use. Possible values are f32 and 64
+                        What precision to use. Possible values are f32 and f64
   --layers LAYERS, -l LAYERS
                         How many hidden layers to have in the neural net
   --dimension DIMENSION, -d DIMENSION
