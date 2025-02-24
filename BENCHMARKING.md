@@ -14,9 +14,9 @@ benchmark :
         layers : 100                    # only hidden layers, input and output layer excluded
         dimension : 128                 # measured in perceptrons
     math :
-        precision : "f32"               # possible values are f32 and f64 on x86, other acrchitectures?
+        precision : "f4"                # possible values are f4 and f8 on x86, other acrchitectures?
         epsilons :                      # used for numerical stability.  Increase if you start getting overflows
-            epsilon_exp : "4e-6"        # for FP32 this is the smallest value I found
+            epsilon_exp : "4e-6"        # for f4 this is the smallest value I found
             epsilon_square : "1e-7"     # TODO
         activation : "sigmoid"          # available "sigmoid" and "tanh"
     performance :
@@ -37,7 +37,7 @@ Completed "Hello World!" in 179.538458 ms
 * Be mindful of your CPU's cache hierarchy.  The more layers you can fit into faster cache levels the better.  A single layer should ideally take no more than 50%-70% of the target cache level.  Since all hidden layers are currently the same size, you can use this formula to compute the size of a layer:
     ```
     size = T * N ^ (N + 2)
-    where N is the layer dimension (-d, --dimension) and T is the data type (4 for f32, 8 for f64)
+    where N is the layer dimension (-d, --dimension) and T is the data type (4 for f4, 8 for f8)
 
 ### Tuning the math
 

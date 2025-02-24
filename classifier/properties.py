@@ -3,7 +3,7 @@ from . import *
 class GlobalProperties :
 
     def __init__(self, args):
-        if args.precision == "f32" :
+        if args.precision == "f4" :
             dtype = np.float32
         else :
             dtype = np.float64

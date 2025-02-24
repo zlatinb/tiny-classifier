@@ -7,8 +7,8 @@ if __name__  == "__main__" :
     parser = ap.ArgumentParser(
             description="Benchmarks the classifier on your CPU")
     parser.add_argument('--nepochs', '-n', type=int, help='How many epochs to run', required = True)
-    parser.add_argument('--precision', '-p', type=str, choices = ["f32","f64"], 
-        help="What precision to use.  Possible values are f32 and 64",
+    parser.add_argument('--precision', '-p', type=str, choices = ["f4","f8"], 
+        help="What precision to use.  Possible values are f4 and 64",
         required = True)
     parser.add_argument('--layers', '-l', type=int, help="How many hidden layers to have in the neural net",
         required = True)

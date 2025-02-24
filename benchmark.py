@@ -6,7 +6,7 @@ from bench import Driver
 
 YAML_VERSION = 1
 ACTIVATIONS = ("sigmoid", "tanh")
-PRECISIONS = ("f32","f64")
+PRECISIONS = ("f4","f8")
 
 class Args :
     def __init__(self) :

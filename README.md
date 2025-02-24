@@ -26,7 +26,7 @@ options:
   --nepochs NEPOCHS, -n NEPOCHS
                         How many epochs to run
   --precision PRECISION, -p PRECISION
-                        What precision to use. Possible values are f32 and f64
+                        What precision to use. Possible values are f4 and f8
   --layers LAYERS, -l LAYERS
                         How many hidden layers to have in the neural net
   --dimension DIMENSION, -d DIMENSION
@@ -38,7 +38,7 @@ options:
 ```
 Here are the results from my laptop:
 ```
-./quick_benchmark.py -p f32 -n 50 -l 100 -d 1024 -a sigmoid
+./quick_benchmark.py -p f4 -n 50 -l 100 -d 1024 -a sigmoid
 Total time for 50 run(s) was 3327.771058 ms
 ```
 
